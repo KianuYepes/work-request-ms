@@ -1,0 +1,139 @@
+/*
+#F6F6F6 - white
+#EDA031 - yellow
+#272946 - navy blue
+*/
+/* -----Color scheme values----- */
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,300&display=swap');
+
+:root{
+	--white: #F6F6F6;
+	--yellow: #EDA031;
+	--blue: #272946;
+}
+
+*{
+	margin: 0;
+	font-family: "Open Sans", serif;
+}
+
+/* -----Login Page Styles----- */
+.container{
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+}
+
+/* HEADER ====== */
+.container .header{
+	background: var(--blue);
+	padding: 0.7rem;
+	text-align: center;
+}
+.container .header section{
+	color: var(--white);
+	font-size: 2rem;
+}
+.container .header section::after{
+	content: 'Digitalized Request Manager';
+	display: block;
+	color: var(--white);
+	font-size: 1rem;
+	font-style: italic;
+}
+
+/* MAIN CONTENT ====== */
+.container .content{
+	background: var(--yellow);
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.container .content section{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background: var(--white);
+	height: calc(97vh - 5.313rem);
+	margin-top: 1.5rem;
+	width: 50%;
+	border-radius: 10px 10px 0px 0px;
+}
+.container .content section label{
+	margin-top: 2rem;
+	color: var(--blue);
+	font-size: 4.5rem;
+}
+/*form section*/
+.container .content section form{
+	display: flex;
+	flex-direction: column;
+	color: var(--blue);
+	font-size: 4rem;
+	height: 19rem;
+	width: 60%;
+	margin-top: 2.5rem;
+}
+.container .content section form input{
+	font-size: 2rem;
+	margin-top: 3rem;
+	border-style: none;
+	background: var(--white);
+	border-bottom: 1px solid var(--blue);
+	outline: none;
+}
+.container .content section form input:last-child{ /* Button */
+	margin: 3rem 20% 0% 20%;
+	border-radius: 2rem;
+	border-style: none;
+	font-size: 1.7rem;
+	background: var(--blue);
+	color: var(--white);
+}
+.container .content section form input:last-child:hover{ /* Button */
+	transition: 100ms;
+	cursor: pointer;
+	background: var(--yellow);
+	color: var(--blue);
+}
+/*do you have an account? section*/
+.container .content section p{
+	font-size: 1rem;
+}
+.container .content section p a{
+	text-decoration: none;
+	color: var(--yellow);
+}
+.container .content section p a:hover{
+	text-decoration: underline;
+}
+
+/* ========== CHANGING TO PHONE SIZE ========== */
+
+@media screen and (max-width: 560px){
+	.container .content{
+		background: var(--white);
+	}
+	.container .content section{
+		width: 100%;
+	}
+	.container .content section label{
+		font-size: 3rem;
+	}
+
+	.container .content section form input{
+		font-size: 1.5rem;
+		margin-top: 3rem;
+		text-align: center;
+		/*border-style: none;
+		background: var(--white);
+		border-bottom: 1px solid var(--blue);
+		outline: none;*/
+	}
+
+	.container .header section::after{
+		content: '';
+	}
+}
