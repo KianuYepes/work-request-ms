@@ -1,0 +1,150 @@
+/*
+#F6F6F6 - white
+#EDA031 - yellow
+#272946 - navy blue
+*/
+/* -----Color scheme values----- */
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,700;1,100;1,200&display=swap');
+
+:root{
+	--white: #F6F6F6;
+	--yellow: #EDA031;
+	--blue: #272946;
+}
+/* Formula for font size relativity: tagert / context = result in ems ; */
+
+*{
+	margin: 0;
+	font-family: "Raleway", serif;
+}
+
+/*  ===== HEADER =====  */
+body{
+	background: var(--yellow);
+}
+.container .header{
+	background: var(--blue);
+	color: var(--white);
+	text-align: center;
+	font-size: 2.625em; /* 42 px */
+	font-weight: bold;
+	padding: 0.38095238095em;
+	/*margin-bottom: 0.38095238095em;*/
+}
+.container .header::after{
+	content: "A Digitalized work Request system";
+	font-size: 0.38095238095em;
+	padding: 0;
+	display: block;
+	font-weight: normal;
+	font-style: italic;
+}
+/* Dont have an account? */
+p{
+	text-align: center;	
+	font-size: 1.3rem;
+}
+p a{
+	text-decoration: none;
+	color: var(--yellow);
+}
+p a:hover{
+	text-decoration: underline;
+}
+
+/*  ===== MAIN CONTENT =====  */
+
+/*#wrap figure{
+	position: relative;
+	animation: 300ms slider infinite;
+}*/
+
+/* content container */
+.content{
+	background: var(--white);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	margin-top: 2rem;
+	margin-left: 15rem;
+	margin-right: 15rem;
+
+	border-radius: 1rem 1rem 0rem 0rem; 
+	padding: 2rem;
+	height: 80vh;
+
+}
+.title{
+	font-size: 3rem;
+	text-align: center;
+	margin-left: 5rem;
+	color: var(--blue);
+}
+
+/* form display vertical */
+/* Displays the form in a vertical manner */
+.content section div span form{ 
+	/*position: absolute;*/
+	display: flex;
+	flex-direction: column;
+	/*background: green;*/
+	width: 49.5rem;
+	/*margin-left: 2rem;*/
+	align-items: center;
+}
+
+.content section div span form input{ /* text field */
+	font-size: 1.5rem;
+	width: 60%;
+	margin: 1rem 1rem 1.5rem 1rem;
+	outline: none;
+	border: none;
+	background: var(--white);
+	border-bottom: 1px solid var(--blue);
+}	
+.content section div span form input:last-child{ /* button */
+	width: 20%;
+	cursor: pointer;
+	border: none;
+	border-radius: 1.5rem;
+	background: var(--blue);
+	color: var(--white);
+	padding: 0.4rem;
+}
+.content section div span form input:last-child:hover{
+	background: var(--yellow);
+	color: var(--blue);
+	font-weight: bold;
+}
+
+.content section div span form label{
+	font-size: 2rem;
+	margin-left: 1rem;
+	margin-bottom: 2rem;
+	font-style: italic;
+	font-weight: bold;
+	color: var(--blue);
+}
+
+/* Form slider container */
+.content section .wrapper{
+	position: relative;
+	/*background: red;*/
+	padding: 1rem 0rem 1rem 0rem;
+	width: 55vw;
+	height: 35vh;
+	display: flex;
+	flex-direction: row;
+	overflow: auto;
+	border-radius: 1rem 1rem 1rem 1rem;
+	margin-top: 2rem;
+}
+
+.content section div{
+	scroll-snap-type: x mandatory;
+}
+.content section div span{
+	scroll-snap-align: center;
+}
