@@ -51,6 +51,7 @@ p a{
 }
 p a:hover{
 	text-decoration: underline;
+	font-weight: bold;
 }
 
 /*  ===== MAIN CONTENT =====  */
