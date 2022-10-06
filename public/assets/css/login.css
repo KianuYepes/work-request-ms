@@ -5,135 +5,146 @@
 */
 /* -----Color scheme values----- */
 
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,700;1,100;1,200&display=swap');
 
 :root{
 	--white: #F6F6F6;
 	--yellow: #EDA031;
 	--blue: #272946;
 }
+/* Formula for font size relativity: tagert / context = result in ems ; */
 
 *{
 	margin: 0;
-	font-family: "Open Sans", serif;
+	font-family: "Raleway", serif;
 }
 
-/* -----Login Page Styles----- */
-.container{
-	display: flex;
-	flex-direction: column;
-	height: 100vh;
+/*  ===== HEADER =====  */
+body{
+	background: var(--yellow);
 }
-
-/* HEADER ====== */
 .container .header{
 	background: var(--blue);
-	padding: 0.7rem;
+	color: var(--white);
 	text-align: center;
+	font-size: 2.625em; /* 42 px */
+	font-weight: bold;
+	padding: 0.38095238095em;
+	/*margin-bottom: 0.38095238095em;*/
 }
-.container .header section{
-	color: var(--white);
-	font-size: 2rem;
-}
-.container .header section::after{
-	content: 'Digitalized Request Manager';
+.container .header::after{
+	content: "A Digitalized work Request system";
+	font-size: 0.38095238095em;
+	padding: 0;
 	display: block;
-	color: var(--white);
-	font-size: 1rem;
+	font-weight: normal;
 	font-style: italic;
 }
-
-/* MAIN CONTENT ====== */
-.container .content{
-	background: var(--yellow);
-	flex-grow: 1;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+/* Dont have an account? */
+p{
+	text-align: center;	
+	font-size: 1.3rem;
 }
-.container .content section{
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	background: var(--white);
-	height: calc(97vh - 5.313rem);
-	margin-top: 1.5rem;
-	width: 50%;
-	border-radius: 10px 10px 0px 0px;
-}
-.container .content section label{
-	margin-top: 2rem;
-	color: var(--blue);
-	font-size: 4.5rem;
-}
-/*form section*/
-.container .content section form{
-	display: flex;
-	flex-direction: column;
-	color: var(--blue);
-	font-size: 4rem;
-	height: 19rem;
-	width: 60%;
-	margin-top: 2.5rem;
-}
-.container .content section form input{
-	font-size: 2rem;
-	margin-top: 3rem;
-	border-style: none;
-	background: var(--white);
-	border-bottom: 1px solid var(--blue);
-	outline: none;
-}
-.container .content section form input:last-child{ /* Button */
-	margin: 3rem 20% 0% 20%;
-	border-radius: 2rem;
-	border-style: none;
-	font-size: 1.7rem;
-	background: var(--blue);
-	color: var(--white);
-}
-.container .content section form input:last-child:hover{ /* Button */
-	transition: 100ms;
-	cursor: pointer;
-	background: var(--yellow);
-	color: var(--blue);
-}
-/*do you have an account? section*/
-.container .content section p{
-	font-size: 1rem;
-}
-.container .content section p a{
+p a{
 	text-decoration: none;
 	color: var(--yellow);
 }
-.container .content section p a:hover{
+p a:hover{
 	text-decoration: underline;
 }
 
-/* ========== CHANGING TO PHONE SIZE ========== */
+/*  ===== MAIN CONTENT =====  */
 
-@media screen and (max-width: 560px){
-	.container .content{
-		background: var(--white);
-	}
-	.container .content section{
-		width: 100%;
-	}
-	.container .content section label{
-		font-size: 3rem;
-	}
+/*#wrap figure{
+	position: relative;
+	animation: 300ms slider infinite;
+}*/
 
-	.container .content section form input{
-		font-size: 1.5rem;
-		margin-top: 3rem;
-		text-align: center;
-		/*border-style: none;
-		background: var(--white);
-		border-bottom: 1px solid var(--blue);
-		outline: none;*/
-	}
+/* content container */
+.content{
+	background: var(--white);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 
-	.container .header section::after{
-		content: '';
-	}
+	margin-top: 2rem;
+	margin-left: 15rem;
+	margin-right: 15rem;
+
+	border-radius: 1rem 1rem 0rem 0rem; 
+	padding: 2rem;
+	height: 80vh;
+
+}
+.title{
+	font-size: 3rem;
+	text-align: center;
+	margin-left: 5rem;
+	color: var(--blue);
+}
+
+/* form display vertical */
+/* Displays the form in a vertical manner */
+.content section div span form{ 
+	/*position: absolute;*/
+	display: flex;
+	flex-direction: column;
+	/*background: green;*/
+	width: 49.5rem;
+	/*margin-left: 2rem;*/
+	align-items: center;
+}
+
+.content section div span form input{ /* text field */
+	font-size: 1.5rem;
+	width: 60%;
+	margin: 1rem 1rem 1.5rem 1rem;
+	outline: none;
+	border: none;
+	background: var(--white);
+	border-bottom: 1px solid var(--blue);
+}	
+.content section div span form input:last-child{ /* button */
+	width: 20%;
+	cursor: pointer;
+	border: none;
+	border-radius: 1.5rem;
+	background: var(--blue);
+	color: var(--white);
+	padding: 0.4rem;
+}
+.content section div span form input:last-child:hover{
+	background: var(--yellow);
+	color: var(--blue);
+	font-weight: bold;
+}
+
+.content section div span form label{
+	font-size: 2rem;
+	margin-left: 1rem;
+	margin-bottom: 2rem;
+	font-style: italic;
+	font-weight: bold;
+	color: var(--blue);
+}
+
+/* Form slider container */
+.content section .wrapper{
+	position: relative;
+	/*background: red;*/
+	padding: 1rem 0rem 1rem 0rem;
+	width: 55vw;
+	height: 35vh;
+	display: flex;
+	flex-direction: row;
+	overflow: auto;
+	border-radius: 1rem 1rem 1rem 1rem;
+	margin-top: 2rem;
+}
+
+.content section div{
+	scroll-snap-type: x mandatory;
+}
+.content section div span{
+	scroll-snap-align: center;
 }
