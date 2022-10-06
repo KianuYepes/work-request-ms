@@ -7,9 +7,11 @@
     <title>@yield('title')</title>
     <!-- <link rel="stylesheet" href={{ asset('assets/css/styles.css') }}> -->
     <link rel="stylesheet" type="text/css" href={{ asset('assets/css/login.css') }}>
-    <!-- <script src={{ asset('assets/js/test.js') }} defer></script> -->
+    <script src={{ asset('assets/js/login.js') }}></script>
+    
 </head>
 <body>
     @yield('content')
+
 </body>
 </html>

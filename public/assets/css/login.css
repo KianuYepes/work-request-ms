@@ -23,6 +23,10 @@
 body{
 	background: var(--yellow);
 }
+.container{
+	display: flex;
+	flex-direction: column;
+}
 .container .header{
 	background: var(--blue);
 	color: var(--white);
@@ -42,6 +46,8 @@ body{
 }
 /* Dont have an account? */
 p{
+	color: var(--blue);
+	margin-top: 2em;
 	text-align: center;	
 	font-size: 1.3rem;
 }
@@ -71,9 +77,9 @@ p a:hover{
 	margin-left: 15rem;
 	margin-right: 15rem;
 
-	border-radius: 1rem 1rem 0rem 0rem; 
+	border-radius: 1rem 1rem 1rem 1rem; 
 	padding: 2rem;
-	height: 80vh;
+	height: 70vh;
 
 }
 .title{
@@ -130,14 +136,14 @@ p a:hover{
 
 /* Form slider container */
 .content section .wrapper{
-	position: relative;
+	/*position: relative;*/
 	/*background: red;*/
 	padding: 1rem 0rem 1rem 0rem;
-	width: 55vw;
-	height: 35vh;
+	width: 55vw; /* 55 */
+	height: 40vh;
 	display: flex;
 	flex-direction: row;
-	overflow: auto;
+	overflow-x: scroll;
 	border-radius: 1rem 1rem 1rem 1rem;
 	margin-top: 2rem;
 }
@@ -148,3 +154,54 @@ p a:hover{
 .content section div span{
 	scroll-snap-align: center;
 }
+
+/*  scrollbar style  */
+
+.wrapper::-webkit-scrollbar{
+	height: 1em;
+}
+
+.wrapper::-webkit-scrollbar-track{
+	/*background: var(--white);*/
+	background: rgba(220,220,230,0.5);
+	border-radius: 100vw;
+}
+
+.wrapper::-webkit-scrollbar-thumb{
+	background: var(--yellow);
+	border-radius: 100vw;
+}
+
+@media screen and (max-width: 500px){
+
+	.content{
+		width: 85%;
+		margin-left: 0;
+		margin-right: 0;
+		border-radius: 0;
+	}
+
+	.content section .wrapper{
+		width: 95vw;
+	}
+	.title{
+		padding-left: 7rem;
+		font-size: 2em;
+		font-weight: bold;
+	}
+	body{
+		background: var(--white);
+	}
+	.content section div span form input{
+		width: 60%;
+	}
+	.content section div span form{ 
+		width: 30rem;
+		/*border:  1px solid black;*/
+	}
+
+	.content section div span form input:last-child{
+		width: 30%;
+	}
+}
+
