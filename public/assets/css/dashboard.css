@@ -188,7 +188,7 @@ header, section, main{
 	:root{
 	--fs-large: clamp(1rem, 12vw + 1rem, 2rem);
 	--fs-medium: 1.7rem;
-	--fs-small: 1.3rem;
+	--fs-small: 1.2rem;
 	--fs-xsmall: 1rem;
 
 	}
