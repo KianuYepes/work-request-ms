@@ -40,4 +40,10 @@ class PageController extends Controller
     {
         return view('workstaff');
     }
+
+    // temporary admin dashboard
+    public function tempDashboard()
+    {
+        return view('tempDashboardAdmin');
+    }
 }

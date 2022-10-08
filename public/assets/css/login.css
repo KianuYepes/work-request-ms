@@ -6,6 +6,7 @@
 /* -----Color scheme values----- */
 
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,700;1,100;1,200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600&family=Raleway:ital,wght@0,100;0,200;0,300;0,700;1,100;1,200&display=swap');
 
 :root{
 	--white: #F6F6F6;
@@ -16,7 +17,7 @@
 
 *{
 	margin: 0;
-	font-family: "Raleway", serif;
+	font-family: "Quicksand", sans-serif;
 }
 
 /*  ===== HEADER =====  */

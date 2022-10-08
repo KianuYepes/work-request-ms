@@ -50,3 +50,6 @@ Route::get('/staff/dashboard',[PageController::class,'staffDashboard'])->middlew
 Route::post('/user/workrequest',[WorkRequestController::class, 'workrequest']);
 
 Route::get('user/logout',[AuthController::class,'logout']);
+
+// temporary dashboard
+Route::get('/tempDashboard',[PageController::class,'tempDashboard']);

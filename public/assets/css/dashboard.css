@@ -1,0 +1,202 @@
+@import "login.css";
+/* variables */
+:root{
+	--fs-large: clamp(1rem, 12vw + 1rem, 2.5rem);
+	--fs-medium: 2rem;
+	--fs-small: 1.5rem;
+	--fs-xsmall: 1;
+
+	--radius:  1rem;
+}
+/* db stands for dashboard */
+body{
+	background: var(--blue);
+}
+/* Display the layout */
+.db-grid{
+	display: grid;
+	width: 100vw;
+	height: 100vh;
+
+	grid-template-columns: 1fr 2fr 1fr;
+	grid-template-rows: 0.2fr 2fr 0.01fr;
+	grid-gap: 1rem;
+
+	grid-template-areas: 
+		"h h h "
+		"l m r"
+		"f f f";
+	box-sizing: border-box;
+}
+
+/*  ----- All section ----- */
+header, section, main{
+
+}
+
+
+/*  ----- Header section ----- */
+.db-header-content{
+	grid-area: h;
+	font-size: var(--fs-large);
+	font-weight: bold;
+	color: var(--white);
+	text-align: center;
+	padding: 0.5rem;
+	border-bottom: 2px solid var(--white);
+	font-family: "Raleway", sans-serif;
+}
+.db-header-content::after{
+	content: "A Digitalized work Request system";
+	font-size: 0.38095238095em;
+	padding: 0;
+	display: block;
+	font-weight: normal;
+	font-style: italic;
+}
+
+
+/*  ========== APPROVED REQUEST SECTION ========== */
+.db-main-content{
+	grid-area: m;
+	color: var(--blue);
+	border: 2px solid var(--blue);
+	border-radius: var(--radius);
+	/*padding: var(--radius);*/
+	background: var(--white);
+
+
+	display: flex;
+	flex-direction: column;
+}
+/* Approved section contents */
+.db-main-content .main-label{
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	text-align: center;
+	border-bottom: 2px solid var(--blue);
+
+	font-size: var(--fs-medium);
+	font-weight: bold;
+}
+.db-main-content .main-content{
+	flex-grow: 1;
+	background: var(--white);
+	color: var(--blue);
+
+	font-size: var(--fs-small);
+}	
+.db-main-content .main-footer{
+	flex-grow: 0;
+	padding-bottom: 1rem;
+	padding-top: 1rem;
+	text-align: center;
+	border-top: 2px solid var(--blue);
+}
+
+
+
+/*  ========== REQUESTS SECTION ========== */
+.db-left-side-content{
+	grid-area: l;
+	color: var(--white);
+	border: 2px solid var(--yellow);
+	border-radius: var(--radius);
+	margin-left: 1.5rem;
+	margin-bottom: 3rem;
+
+	display: flex;
+	flex-direction: column;
+}
+	/* requests contents */
+.db-left-side-content .left-label{
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	text-align: center;
+	border-bottom: 2px solid var(--yellow);
+
+	font-size: var(--fs-medium);
+	font-weight: bold;
+}
+.db-left-side-content .left-content{
+	flex-grow: 1;
+	background: var(--blue);
+	color: var(--white);
+
+	font-size: var(--fs-small);
+}	
+.db-left-side-content .left-footer{
+	flex-grow: 0;
+	padding-bottom: 1rem;
+	padding-top: 1rem;
+	text-align: center;
+	border-top: 2px solid var(--yellow);
+	font-size: var(--fs-xsmall);
+}
+
+
+
+
+/*  ========== WORK STAFF SECTIONS ========== */
+.db-right-side-content{
+	grid-area: r;
+	color: var(--white);
+	border: 2px solid var(--white);
+	border-radius: var(--radius);
+	/*padding: var(--radius);*/
+	margin-right: 1.5rem;
+	margin-bottom: 3rem;
+
+	display: flex;
+	flex-direction: column;
+}
+/* work staff contents */
+.db-right-side-content .right-label{
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	text-align: center;
+	border-bottom: 2px solid var(--white);
+
+	font-size: var(--fs-medium);
+	font-weight: bold;
+}
+.db-right-side-content .right-content{
+	flex-grow: 1;
+	background: var(--blue);
+	color: var(--white);
+
+	font-size: var(--fs-small);
+}	
+.db-right-side-content .right-footer{
+	flex-grow: 0;
+	padding-bottom: 1rem;
+	padding-top: 1rem;
+	text-align: center;
+	border-top: 2px solid var(--white);
+	font-size: var(--fs-xsmall);
+}
+
+
+
+
+/* ----- Responsive to smaller resolution computers ----- */
+@media only screen and (max-width: 1100px){
+	body{
+		background: pink;
+	}
+
+	:root{
+	--fs-large: clamp(1rem, 12vw + 1rem, 2rem);
+	--fs-medium: 1.7rem;
+	--fs-small: 1.3rem;
+	--fs-xsmall: 1rem;
+
+	}
+}
+
+/* ----- Responsive to phones ----- */
+@media only screen and (max-width: 400px){
+	body{
+		background: red;
+	}
+}
