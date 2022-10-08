@@ -4,7 +4,9 @@
 <div class="db-grid">
 	<!-- ============= TITLE HEAD ============= -->
 	<header class="db-header-content">
-		Work Request System
+		<label>Work Request System</label>
+		<label>Administrator</label>
+		<label>Log out</label>
 	</header>
 
 <!-- ============= LEFT SIDE BAR (REQUESTS) ============= -->
@@ -15,11 +17,11 @@
 		</div>
 
 		<div class="left-content">
-			content
+			<!-- content -->
 		</div>
 
 		<div class="left-footer">
-			Add Requestors
+			+ Add Requestors
 		</div>
 
 	</section>
@@ -31,7 +33,7 @@
 		</div>
 
 		<div class="main-content">
-			content
+			<!-- content -->
 		</div>
 
 		<div class="main-footer"></div>
@@ -44,11 +46,11 @@
 		</div>
 
 		<div class="right-content">
-			content
+			<!-- content -->
 		</div>
 
 		<div class="right-footer">
-			Add Staffs
+			+ Add Staffs
 		</div>
 	</section>
 

@@ -1,12 +1,13 @@
 @import "login.css";
 /* variables */
 :root{
-	--fs-large: clamp(1rem, 12vw + 1rem, 2.5rem);
+	--fs-large: clamp(1rem, 12vw + 1rem, 2.2rem);
 	--fs-medium: 2rem;
 	--fs-small: 1.5rem;
 	--fs-xsmall: 1;
 
 	--radius:  1rem;
+	--border-size: 1px;
 }
 /* db stands for dashboard */
 body{
@@ -35,32 +36,62 @@ header, section, main{
 }
 
 
-/*  ----- Header section ----- */
+/*  ========== HEADER SECTION ========== */
 .db-header-content{
 	grid-area: h;
-	font-size: var(--fs-large);
 	font-weight: bold;
 	color: var(--white);
-	text-align: center;
+	/*text-align: center;*/
 	padding: 0.5rem;
-	border-bottom: 2px solid var(--white);
+	border-bottom: var(--border-size) solid var(--white);
 	font-family: "Raleway", sans-serif;
+
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-areas: 
+		"label user label2";
 }
-.db-header-content::after{
-	content: "A Digitalized work Request system";
+.db-header-content label:first-child::after{
+	content: "A Digitalized Work Request Manager";
 	font-size: 0.38095238095em;
 	padding: 0;
 	display: block;
 	font-weight: normal;
 	font-style: italic;
 }
+.db-header-content label:first-child{
+	font-family: "Roboto Slab", sans-serif;
+	font-size: var(--fs-large);
+	grid-area: label;
+	text-align: center;
+}
+.db-header-content label:last-child{
+	font-family: "Ubuntu", sans-serif;
+	font-size: var(--fs-medium);
+	font-weight: normal;
+	grid-area: label2;
+
+	padding-top: 1rem;
+	text-align: center;
+}
+.db-header-content label:nth-child(even){
+	font-family: "Ubuntu", sans-serif;
+	font-size: var(--fs-medium);
+	font-weight: normal;
+	grid-area: user;
+
+	padding-top: 1rem;
+	text-align: center;
+}
+
+
 
 
 /*  ========== APPROVED REQUEST SECTION ========== */
 .db-main-content{
 	grid-area: m;
 	color: var(--blue);
-	border: 2px solid var(--blue);
+	border: var(--border-size) solid var(--blue);
 	border-radius: var(--radius);
 	/*padding: var(--radius);*/
 	background: var(--white);
@@ -74,7 +105,7 @@ header, section, main{
 	padding-top: 1rem;
 	padding-bottom: 1rem;
 	text-align: center;
-	border-bottom: 2px solid var(--blue);
+	border-bottom: var(--border-size) solid var(--blue);
 
 	font-size: var(--fs-medium);
 	font-weight: bold;
@@ -91,7 +122,7 @@ header, section, main{
 	padding-bottom: 1rem;
 	padding-top: 1rem;
 	text-align: center;
-	border-top: 2px solid var(--blue);
+	border-top: var(--border-size) solid var(--blue);
 }
 
 
@@ -100,7 +131,7 @@ header, section, main{
 .db-left-side-content{
 	grid-area: l;
 	color: var(--white);
-	border: 2px solid var(--yellow);
+	border: var(--border-size) solid var(--yellow);
 	border-radius: var(--radius);
 	margin-left: 1.5rem;
 	margin-bottom: 3rem;
@@ -113,7 +144,7 @@ header, section, main{
 	padding-top: 1rem;
 	padding-bottom: 1rem;
 	text-align: center;
-	border-bottom: 2px solid var(--yellow);
+	border-bottom: var(--border-size) solid var(--yellow);
 
 	font-size: var(--fs-medium);
 	font-weight: bold;
@@ -130,7 +161,7 @@ header, section, main{
 	padding-bottom: 1rem;
 	padding-top: 1rem;
 	text-align: center;
-	border-top: 2px solid var(--yellow);
+	border-top: var(--border-size) solid var(--yellow);
 	font-size: var(--fs-xsmall);
 }
 
@@ -141,7 +172,7 @@ header, section, main{
 .db-right-side-content{
 	grid-area: r;
 	color: var(--white);
-	border: 2px solid var(--white);
+	border: var(--border-size) solid var(--white);
 	border-radius: var(--radius);
 	/*padding: var(--radius);*/
 	margin-right: 1.5rem;
@@ -155,7 +186,7 @@ header, section, main{
 	padding-top: 1rem;
 	padding-bottom: 1rem;
 	text-align: center;
-	border-bottom: 2px solid var(--white);
+	border-bottom: var(--border-size) solid var(--white);
 
 	font-size: var(--fs-medium);
 	font-weight: bold;
@@ -172,7 +203,7 @@ header, section, main{
 	padding-bottom: 1rem;
 	padding-top: 1rem;
 	text-align: center;
-	border-top: 2px solid var(--white);
+	border-top: var(--border-size) solid var(--white);
 	font-size: var(--fs-xsmall);
 }
 
@@ -180,17 +211,20 @@ header, section, main{
 
 
 /* ----- Responsive to smaller resolution computers ----- */
-@media only screen and (max-width: 1100px){
-	body{
-		background: pink;
-	}
-
+@media only screen and (max-width: 1200px){
 	:root{
-	--fs-large: clamp(1rem, 12vw + 1rem, 2rem);
+	--fs-large: clamp(1rem, 12vw + 1rem, 1.7rem);
 	--fs-medium: 1.7rem;
 	--fs-small: 1.2rem;
 	--fs-xsmall: 1rem;
 
+	}
+
+	.db-grid{
+		grid-template-columns: 1fr 1.5fr 1fr;
+	}
+	.db-header-content label:first-child{
+		padding-top: 0.5rem;
 	}
 }
 
